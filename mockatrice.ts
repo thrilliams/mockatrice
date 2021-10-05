@@ -1,12 +1,12 @@
-import { parse } from 'https://deno.land/std@0.110.0/flags/mod.ts';
-import { ensureFile } from 'https://deno.land/std@0.110.0/fs/mod.ts';
 import {
+    parse,
+    ensureFile,
     copy,
-    readerFromStreamReader
-} from 'https://deno.land/std@0.110.0/io/mod.ts';
-import { delay } from 'https://deno.land/std@0.110.0/async/mod.ts';
-import { join } from 'https://deno.land/std@0.110.0/path/mod.ts';
-import ProgressBar from 'https://deno.land/x/progress@v1.2.4/mod.ts';
+    readerFromStreamReader,
+    delay,
+    join,
+    ProgressBar
+} from './deps.ts';
 
 import { Deck } from './types/Moxfield.ts';
 import { Card } from './types/Scryfall.ts';
@@ -17,11 +17,11 @@ const args = parse(Deno.args);
 const deckId: string | undefined = args.d || args.deck;
 
 if (typeof deckId !== 'string') {
-    console.log(`Example usage:
-    mockatrice --deck jT8Y9X4tlUmeNZ2AjkD1Vg
-    mockatrice -d jT8Y9X4tlUmeNZ2AjkD1Vg
-    mockatrice --deck jT8Y9X4tlUmeNZ2AjkD1Vg --path '~/Library/Application Support/Cockatrice/Cockatrice/pics/CUSTOM'
-    mockatrice -d jT8Y9X4tlUmeNZ2AjkD1Vg -p '~/Library/Application Support/Cockatrice/Cockatrice/pics/CUSTOM'`);
+    console.log(`Usage:
+    mockatrice --deck [Deck ID]
+    mockatrice -d [Deck ID]
+    mockatrice --deck [Deck ID] --path [Cockatrice]/pics/CUSTOM
+    mockatrice -d [Deck ID] -p [Cockatrice]/pics/CUSTOM`);
     Deno.exit(1);
 }
 
