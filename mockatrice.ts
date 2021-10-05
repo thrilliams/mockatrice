@@ -17,11 +17,7 @@ const args = parse(Deno.args);
 const deckId: string | undefined = args.d || args.deck;
 
 if (typeof deckId !== 'string') {
-    console.log(`Usage:
-    mockatrice --deck [Deck ID]
-    mockatrice -d [Deck ID]
-    mockatrice --deck [Deck ID] --path [Cockatrice]/pics/CUSTOM
-    mockatrice -d [Deck ID] -p [Cockatrice]/pics/CUSTOM`);
+    console.log('Please pass a Moxfield deck ID.');
     Deno.exit(1);
 }
 
