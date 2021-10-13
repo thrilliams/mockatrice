@@ -11,9 +11,9 @@ Usage:
 ```
 mockatrice -d [Deck ID]
 ```
-Pulls selected printings from `https://moxfield.com/decks/[Deck ID]` and outputs them to `./img/[Deck ID]/*.png`.
+Pulls selected printings from `https://moxfield.com/decks/[Deck ID]` and outputs them to `./img/*.png`.
 
 ```
 mockatrice -d [Deck ID] -p [Output folder]
 ```
-Pulls selected printings from `https://moxfield.com/decks/[Deck ID]` and outputs them to `[Output folder]/[Deck ID]/*.png`.
+Pulls selected printings from `https://moxfield.com/decks/[Deck ID]` and outputs them to `[Output folder]/*.png`.

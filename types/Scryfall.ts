@@ -71,7 +71,7 @@ export const Card = z
         mtgo_id: z.number().int().optional(),
         mtgo_foil_id: z.number().int().optional(),
         multiverse_ids: z.number().int().array().optional(),
-        tcgplayer_id: z.number().int(),
+        tcgplayer_id: z.number().int().optional(),
         tcgplayer_etched_id: z.number().int().optional(),
         cardmarket_id: z.number().int().optional(),
         object: z.literal('card'),
