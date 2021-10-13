@@ -137,7 +137,7 @@ async function main() {
 }
 
 async function downloadImage(deckId: string, name: string, uri: string) {
-    const path = join(args.p || args.path || './img', `${deckId}/${name}.png`);
+    const path = join(args.p || args.path || './img', `${name}.png`);
     await ensureFile(path);
     const file = await Deno.open(path, {
         write: true
